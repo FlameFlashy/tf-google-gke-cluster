@@ -2,6 +2,41 @@
 
 This module deploys a Kubernetes cluster on Google Cloud Platform (GCP) using the Google Kubernetes Engine (GKE) service. The GKE cluster is provisioned with a single node pool, and it comes with a generated Kubernetes configuration file (`kubeconfig`) that is stored locally.
 
+## Cloud Resource Cost Estimation
+
+This document provides an estimation of monthly costs for the detected cloud resources.
+
+### google_container_node_pool.this
+
+- **Instance usage** (Linux/UNIX, on-demand, c2d-highcpu-2)
+  - **Monthly Qty**: 2,920 hours
+  - **Monthly Cost**: $52.53
+
+- **Standard provisioned storage** (pd-standard)
+  - **Monthly Qty**: 400 GB
+  - **Monthly Cost**: $16.00
+
+### google_container_cluster.this
+
+- **Cluster management fee**
+  - **Monthly Qty**: 730 hours
+  - **Monthly Cost**: $73.00
+
+## Overall Total
+
+- **Total Monthly Cost**: $141.53
+
+*Usage costs can be estimated by updating Infracost Cloud settings, see docs for other options.*
+
+---
+
+2 cloud resources were detected:
+- 2 were estimated
+
+| Project | Baseline cost | Usage cost* | Total cost |
+|---------|----------------|-------------|------------|
+| main    | $142           | -           | $142       |
+
 ## Usage
 
 ```terraform
